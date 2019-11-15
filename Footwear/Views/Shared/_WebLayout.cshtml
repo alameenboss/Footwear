@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @Styles.Render("~/Content/css")
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/megamenu")
+    @Scripts.Render("~/bundles/movetop")
+    @Scripts.Render("~/bundles/easing")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/wmuSlider")
+    @Scripts.Render("~/bundles/main")
+</head>
+<body>
+
+    @Html.Partial("Header")
+
+    @Html.Partial("Menu")
+
+
+    @RenderBody()
+
+    
+
+    @Html.Partial("Footer")
+
+
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>
