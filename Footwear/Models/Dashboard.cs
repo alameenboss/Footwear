@@ -5,14 +5,27 @@ using System.Web;
 
 namespace Footwear.Models
 {
-    public class Dashboard
+    public class DashboardViewModel
     {
-        public Rating Rating1 { get; set; }
-        public Rating Rating2 { get; set; }
-        public Rating Rating3 { get; set; }
-        public Rating Rating4 { get; set; }
-        public Rating Rating5 { get; set; }
+        public DashboardViewModel()
+        {
+            DashboardItems = new List<DashBoardItemViewModel>();
+        }
+        public List<DashBoardItemViewModel> DashboardItems { get; set; }
+    }
 
-        public Rating Rating6 { get; set; }
+   public class DashBoardItemViewModel
+    {
+        public string Heading { get; set; }
+        public string SubHeading { get; set; }
+
+        public string ImageUrl { get; set; }
+        public int Amount { get; set; }
+        public int Rating { get; set; }
+        public string RatingName { get; set; }
+        public int Count { get; set; }
+        public string ProductHeading { get; set; }
+        public string Descrption { get; set; }
+        public string LinkDescription { get; set; }
     }
 }

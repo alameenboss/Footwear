@@ -1,9 +1,10 @@
-﻿@model Footwear.Models.Rating
+﻿@model int
 
 @{ 
 
     var name = ViewData["Name"];
-
+    var count = ViewData["Count"];
+    var value = Model;
 }
 
 <span class="rating">
@@ -11,8 +12,8 @@
     @for (int i = 5; i > 0; i--)
     {
         <input type="radio" class="rating-input" id="@name-@i" name="@name">
-        <label for="@name-@i" class="@(Model.Value <= i ? "rating-star1" : "rating-star")"></label>
+        <label for="@name-@i" class="@(value <= i ? "rating-star1" : "rating-star")"></label>
     }
     &nbsp;
-    (@Model.Count)
+    (@count)
 </span>
