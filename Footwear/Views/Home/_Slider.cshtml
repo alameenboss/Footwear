@@ -1,0 +1,36 @@
+﻿@model Footwear.Models.DashboardViewModel
+
+<div class="index-banner">
+    <div class="wmuSlider example1" style="height: 560px;">
+        <div class="wmuSliderWrapper">
+
+            @foreach(var item in Model.SliderItems)
+            {
+                <article style="position: relative; width: 100%; opacity: 1;">
+                <div class="banner-wrap">
+                    <div class="slider-left">
+                        <img src="@item.ImageUrl" alt="" />
+                    </div>
+                    <div class="slider-right">
+                        <h1>@item.Heading</h1>
+                        <h2>@item.SubHeading</h2>
+                        <p>@item.Tag</p>
+                        <div class="btn"><a href="/Home/Shop">Shop Now</a></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </article>
+            }
+
+            
+        </div>
+        <a class="wmuSliderPrev">Previous</a>
+        <a class="wmuSliderNext">Next</a>
+        <ul class="wmuSliderPagination">
+            @for (int i = 0; i < Model.SliderItems.Count - 1; i++)
+            {
+                <li><a href="#" class="@(i == 0 ? "wmuActive" : "") ">@i</a></li>
+            }
+        </ul>
+    </div>
+</div>

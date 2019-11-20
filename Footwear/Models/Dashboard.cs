@@ -10,8 +10,10 @@ namespace Footwear.Models
         public DashboardViewModel()
         {
             DashboardItems = new List<DashBoardItemViewModel>();
+            SliderItems = new List<SliderViewModel>();
         }
         public List<DashBoardItemViewModel> DashboardItems { get; set; }
+        public List<SliderViewModel> SliderItems { get; set; }
     }
 
    public class DashBoardItemViewModel
