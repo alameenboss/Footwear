@@ -19,6 +19,7 @@ namespace Footwear.Service
             var model = new DashboardViewModel();
             model.DashboardItems = _dashboardRepository.GetDashboardItems();
             model.SliderItems = _dashboardRepository.GetSliderItems();
+            model.SocialMedia = _dashboardRepository.GetSocialMediaItems();
 
             return model;
         }

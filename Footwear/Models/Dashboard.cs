@@ -11,9 +11,14 @@ namespace Footwear.Models
         {
             DashboardItems = new List<DashBoardItemViewModel>();
             SliderItems = new List<SliderViewModel>();
+            SocialMedia = new List<Socail>();
         }
         public List<DashBoardItemViewModel> DashboardItems { get; set; }
         public List<SliderViewModel> SliderItems { get; set; }
+
+        public string SocialHeading { get; set; }
+
+        public List<Socail> SocialMedia { get; set; }
     }
 
    public class DashBoardItemViewModel
@@ -30,4 +35,12 @@ namespace Footwear.Models
         public string Descrption { get; set; }
         public string LinkDescription { get; set; }
     }
+
+    public class Socail 
+    {
+        public string CssClass { get; set; }
+        public string ImageUrl { get; set; }
+        public string Likes { get; set; }
+    }
+
 }

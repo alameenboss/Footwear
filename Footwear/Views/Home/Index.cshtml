@@ -1,54 +1,35 @@
 ﻿@model Footwear.Models.DashboardViewModel
 @{
     ViewBag.Title = "Home Page";
+
+    var counter = 0;
+    var count = Model.DashboardItems.Count;
+    var noOfRows = count % 3 != 0 ? Math.Abs(count / 3) + 1 : (count / 3);
 }
 
-@Html.Partial("_Slider",Model)
+@Html.Partial("_Slider", Model)
 
 <div class="main">
     <div class="wrap">
         <div class="content-top">
-            <div class="lsidebar span_1_of_c1">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing</p>
-            </div>
-            <div class="cont span_2_of_c1">
-                <div class="social">
-                    <ul>
-                        <li class="facebook"><a href="#"><span> </span></a><div class="radius"> <img src="~/Content/images/radius.png"><a href="#"> </a></div><div class="border hide"><p class="num">1.51K</p></div></li>
-                    </ul>
-                </div>
-                <div class="social">
-                    <ul>
-                        <li class="twitter"><a href="#"><span> </span></a><div class="radius"> <img src="~/Content/images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
-                    </ul>
-                </div>
-                <div class="social">
-                    <ul>
-                        <li class="google"><a href="#"><span> </span></a><div class="radius"> <img src="~/Content/images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
-                    </ul>
-                </div>
-                <div class="social">
-                    <ul>
-                        <li class="dot"><a href="#"><span> </span></a><div class="radius"> <img src="~/Content/images/radius.png"></div><div class="border hide"><p class="num">1.51K</p></div></li>
-                    </ul>
-                </div>
-                <div class="clear"> </div>
-            </div>
+            @Html.Partial("_DashboardSocial", Model)
             <div class="clear"></div>
         </div>
         <div class="content-bottom">
-            <div class="box1">
-                @Html.Partial("_DashboardItem", Model.DashboardItems[0])
-                @Html.Partial("_DashboardItem", Model.DashboardItems[1])
-                @Html.Partial("_DashboardItem", Model.DashboardItems[2])
-                <div class="clear"></div>
-            </div>
-            <div class="box1">
-                @Html.Partial("_DashboardItem", Model.DashboardItems[3])
-                @Html.Partial("_DashboardItem", Model.DashboardItems[4])
-                @Html.Partial("_DashboardItem", Model.DashboardItems[5])
-                <div class="clear"></div>
-            </div>
+
+            @for (int i = 0; i < noOfRows; j++)
+            {
+                <div class="box1">
+                    @for (int j = 0; j <= 2; i++)
+                    {
+                        @Html.Partial("_DashboardItem", Model.DashboardItems[counter])
+
+                        counter++;
+                    }
+                    <div class="clear"></div>
+                </div>
+            }
+
         </div>
     </div>
 </div>

@@ -17,7 +17,9 @@ namespace Footwear.Controllers
         }
         public ActionResult Index()
         {
+
             var model = _dashboardService.GetDashboardData();
+            model.SocialHeading = "Lorem ipsum dolor sit amet, consectetuer adipiscing";
             return View(model);
         }
 

@@ -1,0 +1,27 @@
+﻿@model Footwear.Models.DashboardViewModel
+
+<div class="lsidebar span_1_of_c1">
+    <p>@Model.SocialHeading</p>
+</div>
+<div class="cont span_2_of_c1">
+
+    @foreach (var item in Model.SocialMedia)
+    {
+        <div class="social">
+            <ul>
+                <li class="@item.CssClass">
+                    <a href="#"><span> </span></a>
+                    <div class="radius">
+                        <img src="~/Content/images/radius.png">
+                        <a href="#"> </a>
+                    </div>
+                    <div class="border hide">
+                        <p class="num">@item.Likes</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    }
+    <div class="clear"> </div>
+</div>

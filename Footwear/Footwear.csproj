@@ -316,6 +316,7 @@
     <Content Include="Views\Shared\EditorTemplates\Rating.cshtml" />
     <Content Include="Views\Home\_DashboardItem.cshtml" />
     <Content Include="Views\Home\_Slider.cshtml" />
+    <Content Include="Views\Home\_DashboardSocial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
