@@ -17,10 +17,10 @@
         </div>
         <div class="content-bottom">
 
-            @for (int i = 0; i < noOfRows; j++)
+            @for (int i = 0; i < noOfRows; i++)
             {
                 <div class="box1">
-                    @for (int j = 0; j <= 2; i++)
+                    @for (int j = 0; j <= 2; j++)
                     {
                         @Html.Partial("_DashboardItem", Model.DashboardItems[counter])
 
