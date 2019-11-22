@@ -17,7 +17,7 @@ namespace Footwear.Service
         public DashboardViewModel GetDashboardData()
         {
             var model = new DashboardViewModel();
-            model.DashboardItems = _dashboardRepository.GetDashboardItems();
+            model.Products = _dashboardRepository.GetProducts();
             model.SliderItems = _dashboardRepository.GetSliderItems();
             model.SocialMedia = _dashboardRepository.GetSocialMediaItems();
 

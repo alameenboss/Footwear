@@ -121,13 +121,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\ShopRepository.cs" />
     <Compile Include="Data\DashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dashboard.cs" />
+    <Compile Include="Models\SocailViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\ShopViewModel.cs" />
+    <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\SliderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ShopService.cs" />
     <Compile Include="Service\DashboardService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +322,7 @@
     <Content Include="Views\Home\_DashboardItem.cshtml" />
     <Content Include="Views\Home\_Slider.cshtml" />
     <Content Include="Views\Home\_DashboardSocial.cshtml" />
+    <Content Include="Views\Home\_ShopToolbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

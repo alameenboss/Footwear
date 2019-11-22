@@ -3,7 +3,7 @@
     ViewBag.Title = "Home Page";
 
     var counter = 0;
-    var count = Model.DashboardItems.Count;
+    var count = Model.Products.Count;
     var noOfRows = count % 3 != 0 ? Math.Abs(count / 3) + 1 : (count / 3);
 }
 
@@ -22,7 +22,7 @@
                 <div class="box1">
                     @for (int j = 0; j <= 2; j++)
                     {
-                        @Html.Partial("_DashboardItem", Model.DashboardItems[counter])
+                        @Html.Partial("_DashboardItem", Model.Products[counter])
 
                         counter++;
                     }

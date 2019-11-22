@@ -7,11 +7,11 @@ namespace Footwear.Data
 {
     public class DashboardRepository
     {
-        public List<DashBoardItemViewModel> GetDashboardItems()
+        public List<ProductViewModel> GetProducts()
         {
-            var model = new List<DashBoardItemViewModel>
+            var model = new List<ProductViewModel>
             {
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -25,7 +25,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -39,7 +39,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -53,7 +53,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -67,7 +67,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -81,7 +81,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -94,7 +94,7 @@ namespace Footwear.Data
                     Descrption = "Lorem ipsum dolor sit amet, consectetuer",
                     LinkDescription = "adipiscing elit, sed diam"
                 },
-                 new DashBoardItemViewModel()
+                 new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -108,7 +108,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -122,7 +122,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -136,7 +136,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -150,7 +150,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -164,7 +164,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -177,7 +177,7 @@ namespace Footwear.Data
                     Descrption = "Lorem ipsum dolor sit amet, consectetuer",
                     LinkDescription = "adipiscing elit, sed diam"
                 },
-                 new DashBoardItemViewModel()
+                 new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -191,7 +191,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -205,7 +205,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -219,7 +219,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -233,7 +233,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -247,7 +247,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -259,7 +259,7 @@ namespace Footwear.Data
                     ProductHeading = "sed diam nonummy",
                     Descrption = "Lorem ipsum dolor sit amet, consectetuer",
                     LinkDescription = "adipiscing elit, sed diam"
-                }, new DashBoardItemViewModel()
+                }, new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -273,7 +273,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -287,7 +287,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -301,7 +301,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -315,7 +315,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -329,7 +329,7 @@ namespace Footwear.Data
                     LinkDescription = "adipiscing elit, sed diam"
                 },
 
-                new DashBoardItemViewModel()
+                new ProductViewModel()
                 {
                     Heading = "Lorem ipsum dolor sit amet",
                     SubHeading = "Lorem ipsum",
@@ -359,29 +359,29 @@ namespace Footwear.Data
             return SliderItems;
         }
 
-        public List<Socail> GetSocialMediaItems()
+        public List<SocailViewModel> GetSocialMediaItems()
         {
-            return new List<Socail>() {
+            return new List<SocailViewModel>() {
 
-                new Socail()
+                new SocailViewModel()
                 {
                     CssClass = "facebook",
                     Likes = "1.51K"
                 },
 
-                new Socail()
+                new SocailViewModel()
                 {
                     CssClass = "twitter",
                     Likes = "1.51K"
                 },
 
-                new Socail()
+                new SocailViewModel()
                 {
                     CssClass = "google",
                     Likes = "1.51K"
                 },
 
-                new Socail()
+                new SocailViewModel()
                 {
                     CssClass = "dot",
                     Likes = "1.51K"

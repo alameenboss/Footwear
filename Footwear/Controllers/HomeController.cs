@@ -10,10 +10,11 @@ namespace Footwear.Controllers
     public class HomeController : Controller
     {
         private DashboardService _dashboardService;
-
+        private ShopService _shopService;
         public HomeController()
         {
             _dashboardService = new DashboardService();
+            _shopService = new ShopService();
         }
         public ActionResult Index()
         {
@@ -25,14 +26,15 @@ namespace Footwear.Controllers
 
         public ActionResult Shop()
         {
-            return View();
+            var model = _shopService.GetShopData(0,0); 
+            return View(model);
         }
 
-        public ActionResult Single()
+        public ActionResult Single(int id)
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
+            var model = _shopService.GetShopData(0, 0).Products.FirstOrDefault(x => x.Id == id);
+            return View(model);
         }
     }
 }
