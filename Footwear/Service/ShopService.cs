@@ -8,18 +8,25 @@ namespace Footwear.Service
 {
     public class ShopService
     {
-        private ShopRepository _shopRepository;
+        private ProductRepository _productRepository;
 
         public ShopService()
         {
-            _shopRepository = new ShopRepository();
+            _productRepository = new ProductRepository();
         }
-        public ShopViewModel GetShopData(int page,int pagesize)
+        public ShopViewModel GetPage(int page,int pagesize)
         {
             var model = new ShopViewModel();
-            model.Products = _shopRepository.GetShopData(page, pagesize);
-
+            model.Products = _productRepository.GetPage(page, pagesize);
             return model;
         }
+
+        public ShopViewModel GetAll()
+        {
+            var model = new ShopViewModel();
+            model.Products = _productRepository.GetAll();
+            return model;
+        }
+
     }
 }

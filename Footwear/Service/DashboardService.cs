@@ -10,14 +10,17 @@ namespace Footwear.Service
     {
         private DashboardRepository _dashboardRepository;
 
+        private ProductRepository _productRepository;
+
         public DashboardService()
         {
             _dashboardRepository = new DashboardRepository();
+            _productRepository = new ProductRepository();
         }
         public DashboardViewModel GetDashboardData()
         {
             var model = new DashboardViewModel();
-            model.Products = _dashboardRepository.GetProducts();
+            model.Products = _productRepository.GetPage(1,15);
             model.SliderItems = _dashboardRepository.GetSliderItems();
             model.SocialMedia = _dashboardRepository.GetSocialMediaItems();
 

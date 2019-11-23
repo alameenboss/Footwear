@@ -18,5 +18,10 @@ namespace Footwear.Models
         public string ProductHeading { get; set; }
         public string Descrption { get; set; }
         public string LinkDescription { get; set; }
+
+        public ProductViewModel(int id)
+        {
+            this.Id = id;
+        }
     }
 }

@@ -121,7 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\ShopRepository.cs" />
+    <Compile Include="Data\ProductRepository.cs" />
     <Compile Include="Data\DashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,6 +132,7 @@
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\SliderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\SingleService.cs" />
     <Compile Include="Service\ShopService.cs" />
     <Compile Include="Service\DashboardService.cs" />
   </ItemGroup>
