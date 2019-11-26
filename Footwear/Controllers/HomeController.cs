@@ -26,9 +26,17 @@ namespace Footwear.Controllers
             return View(model);
         }
 
-        public ActionResult Shop()
+        public ActionResult Shop(int? page,int? pagesize)
         {
-            var model = _shopService.GetAll(); 
+            if (page == null) page = 1;
+            ViewData["pageNum"] = page.Value;
+
+            if (pagesize == null) pagesize = 9;
+            ViewData["pageSize"] = pagesize.Value;
+
+            ViewData["totalItems"] = _shopService.GetAll().Products.Count;
+
+            var model = _shopService.GetPage(page.Value, pagesize.Value); 
             return View(model);
         }
 

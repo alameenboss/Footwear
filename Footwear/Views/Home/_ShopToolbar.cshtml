@@ -1,4 +1,13 @@
-﻿<div class="mens-toolbar">
+﻿@{ 
+    var count = ViewData["totalItems"] != null ? (int)ViewData["totalItems"] : 0;
+
+    var pagesize = ViewData["pageSize"] != null ? (int)ViewData["pageSize"] : 1;
+
+    var noOfPage = count % pagesize != 0 ? Math.Abs(count / pagesize)  : (count / pagesize);
+
+    var pageNum = ViewData["pageNum"] != null ? (int)ViewData["pageNum"] : 1;
+}
+<div class="mens-toolbar">
     <div class="sort">
         <div class="sort-by">
             <label>Sort By</label>
@@ -19,22 +28,25 @@
     <div class="pager">
         <div class="limiter visible-desktop">
             <label>Show</label>
-            <select>
-                <option value="" selected="selected">
+            <select id="page-select">
+                <option value="9" @(pagesize == 9 ? "selected='selected'" : "")>
                     9
                 </option>
-                <option value="">
+                <option value="15" @(pagesize == 15 ? "selected='selected'" : "")>
                     15
                 </option>
-                <option value="">
+                <option value="30" @(pagesize == 30 ? "selected='selected'" : "")>
                     30
                 </option>
             </select> per page
         </div>
         <ul class="dc_pagination dc_paginationA dc_paginationA06">
             <li><a href="#" class="previous">Pages</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
+            @for (int i = 1; i <= noOfPage; i++)
+            {
+                <li><a href="/Home/Shop?page=@i&pagesize=@pagesize">@i</a></li>
+            }
+
         </ul>
         <div class="clear"></div>
     </div>

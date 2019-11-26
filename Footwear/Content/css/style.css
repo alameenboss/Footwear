@@ -348,14 +348,20 @@ p.num{
 	width:30.7%;
 	border: 1px solid #DDD;
 }
-.grid_img{
-	text-align:center;
+.grid_img {
+    text-align: center;
 }
-h3.m_1{
-	color:#555;
-	font-size:0.9em;
-	text-transform:uppercase;
-	font-weight:500;
+
+.grid_img > .css3 > img{
+    width : 300px !important;
+    height: 300px !important;
+}
+
+h3.m_1 {
+    color: #555;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 p.m_2{
 	color:#999;
@@ -367,15 +373,16 @@ p.m_2{
 	font-weight:700;
 }
 .rating {
-          overflow: hidden;
-          display:block;
-          background:#d5d5d5;
-          padding:2% 5%;
-          font-size: 0.85em;
-          color:#000;
-          float: left;
-          width:40%;
-      }
+    overflow: hidden;
+    display: block;
+    background: #d5d5d5;
+    padding: 2% 5%;
+    font-size: 0.85em;
+    color: #000;
+    /* float: left; */
+    width: 90%;
+    height: 49%;
+}
       .rating-input {
           position: absolute;
           left: 0;
@@ -406,12 +413,13 @@ p.m_2{
 .top_box{
 	padding:6%;
 }
-.list{
-	float: left;
-	background: #08080B;
-	width: 50%;
-	padding: 0.5% 0;
-	text-align: center;
+.list {
+    float: left;
+    background: #08080B;
+    width: 100%;
+    padding: 0.5% 0;
+    text-align: center;
+    margin: 0;
 }
 ul.list li img{
 	vertical-align:middle;

@@ -16,15 +16,17 @@
 
             @for (int i = 0; i < noOfRows; i++)
             {
-                <div class="box1">
-                    @for (int j = 0; j <= 2; j++)
+            <div class="box1">
+                @for (int j = 0; j <= 2; j++)
+                {
+                    if (counter <= (Model.Products.Count - 1))
                     {
                         @Html.Partial("_DashboardItem", Model.Products[counter])
-
-                        counter++;
                     }
-                    <div class="clear"></div>
-                </div>
+                    counter++;
+                }
+                <div class="clear"></div>
+            </div>
             }
 
         </div>
@@ -41,5 +43,9 @@
 <script type="text/javascript" id="sourcecode">
     $(function () {
         $('.scroll-pane').jScrollPane();
+
+        $('#page-select').change(function () {
+            window.location.href = "/Home/Shop?page=1&pagesize=" + $(this).val();
+        });
     });
 </script>
