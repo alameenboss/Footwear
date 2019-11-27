@@ -121,6 +121,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ICacheProvider.cs" />
     <Compile Include="Data\ProductRepository.cs" />
@@ -602,6 +603,8 @@
     <Content Include="Views\Home\_DashboardSocial.cshtml" />
     <Content Include="Views\Home\_ShopToolbar.cshtml" />
     <Content Include="Views\Home\_SimilarProducts.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
