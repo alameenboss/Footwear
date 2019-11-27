@@ -460,6 +460,8 @@
     <Content Include="Content\images\WomenFootwear\Women176.jpg" />
     <Content Include="Content\images\WomenFootwear\Women177.jpg" />
     <Content Include="Content\images\zoom.png" />
+    <Content Include="Content\script\single.js" />
+    <Content Include="Content\script\shop.js" />
     <Content Include="Content\script\main.js" />
     <Content Include="Content\script\index.js" />
     <Content Include="Content\js\easing.js" />
@@ -596,6 +598,7 @@
     <Content Include="Views\Home\_Slider.cshtml" />
     <Content Include="Views\Home\_DashboardSocial.cshtml" />
     <Content Include="Views\Home\_ShopToolbar.cshtml" />
+    <Content Include="Views\Home\_SimilarProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

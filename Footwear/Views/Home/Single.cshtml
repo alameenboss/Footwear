@@ -1,40 +1,7 @@
 ﻿@model Footwear.Models.ProductViewModel
 
-<link href="~/Content/css/form.css" rel="stylesheet" type="text/css" media="all" />
-
-
-
-<script type="text/javascript" src="~/Content/js/jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" id="sourcecode">
-    $(function () {
-        $('.scroll-pane').jScrollPane();
-    });
-</script>
-
-<link rel="stylesheet" href="~/Content/css/etalage.css">
-<script src="~/Content/js/jquery.etalage.min.js"></script>
-<!-- Include the Etalage files -->
-<script>
-    jQuery(document).ready(function ($) {
-
-        $('#etalage').etalage({
-            thumb_image_width: 300,
-            thumb_image_height: 400,
-
-            show_hint: true,
-            click_callback: function (image_anchor, instance_id) {
-                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
-            }
-        });
-        // This is for the dropdown list example:
-        $('.dropdownlist').change(function () {
-            etalage_show($(this).find('option:selected').attr('class'));
-        });
-
-    });
-</script>
-
-
+@Styles.Render("~/Content/form")
+@Styles.Render("~/Content/etalage")
 
 <div class="single">
     <div class="wrap">
@@ -45,45 +12,16 @@
             <div class="labout span_1_of_a1">
                 <!-- start product_slider -->
                 <ul id="etalage">
-                    <li>
-                        <a href="optionallink.html">
-                            <img class="etalage_thumb_image" src="@Model.ImageUrl" />
-                            <img class="etalage_source_image" src="@Model.ImageUrl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="optionallink.html">
-                            <img class="etalage_thumb_image" src="@Model.ImageUrl" />
-                            <img class="etalage_source_image" src="@Model.ImageUrl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="optionallink.html">
-                            <img class="etalage_thumb_image" src="@Model.ImageUrl" />
-                            <img class="etalage_source_image" src="@Model.ImageUrl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="optionallink.html">
-                            <img class="etalage_thumb_image" src="@Model.ImageUrl" />
-                            <img class="etalage_source_image" src="@Model.ImageUrl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="optionallink.html">
-                            <img class="etalage_thumb_image" src="@Model.ImageUrl" />
-                            <img class="etalage_source_image" src="@Model.ImageUrl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="optionallink.html">
-                            <img class="etalage_thumb_image" src="@Model.ImageUrl" />
-                            <img class="etalage_source_image" src="@Model.ImageUrl" />
-                        </a>
-                    </li>
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <li>
+                            <a href="optionallink.html">
+                                <img class="etalage_thumb_image" src="@Model.ImageUrl" />
+                                <img class="etalage_source_image" src="@Model.ImageUrl" />
+                            </a>
+                        </li>
+                    }
                 </ul>
-
-
                 <!-- end product_slider -->
             </div>
             <div class="cont1 span_2_of_a1">
@@ -122,61 +60,7 @@
             </div>
             <div class="clear"></div>
 
-
-            <ul id="flexiselDemo3">
-                <li><img src="~/Content/images/pic11.jpg" /><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li>
-                <li><img src="~/Content/images/pic10.jpg" /><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li>
-                <li><img src="~/Content/images/pic9.jpg" /><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li>
-                <li><img src="~/Content/images/pic8.jpg" /><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li>
-                <li><img src="~/Content/images/pic7.jpg" /><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li>
-            </ul>
-            <script type="text/javascript">
-                $(window).load(function () {
-                    $("#flexiselDemo1").flexisel();
-                    $("#flexiselDemo2").flexisel({
-                        enableResponsiveBreakpoints: true,
-                        responsiveBreakpoints: {
-                            portrait: {
-                                changePoint: 480,
-                                visibleItems: 1
-                            },
-                            landscape: {
-                                changePoint: 640,
-                                visibleItems: 2
-                            },
-                            tablet: {
-                                changePoint: 768,
-                                visibleItems: 3
-                            }
-                        }
-                    });
-
-                    $("#flexiselDemo3").flexisel({
-                        visibleItems: 5,
-                        animationSpeed: 1000,
-                        autoPlay: true,
-                        autoPlaySpeed: 3000,
-                        pauseOnHover: true,
-                        enableResponsiveBreakpoints: true,
-                        responsiveBreakpoints: {
-                            portrait: {
-                                changePoint: 480,
-                                visibleItems: 1
-                            },
-                            landscape: {
-                                changePoint: 640,
-                                visibleItems: 2
-                            },
-                            tablet: {
-                                changePoint: 768,
-                                visibleItems: 3
-                            }
-                        }
-                    });
-
-                });
-            </script>
-            <script type="text/javascript" src="~/Content/js/jquery.flexisel.js"></script>
+            @Html.Partial("_SimilarProducts")
             <div class="toogle">
                 <h3 class="m_3">Product Details</h3>
                 <p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
@@ -189,3 +73,8 @@
         <div class="clear"></div>
     </div>
 </div>
+
+@Scripts.Render("~/bundles/jscrollpane")
+@Scripts.Render("~/bundles/etalage")
+@Scripts.Render("~/bundles/flexisel")
+@Scripts.Render("~/bundles/single")

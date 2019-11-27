@@ -7,6 +7,8 @@
     var noOfRows = count % 3 != 0 ? Math.Abs(count / 3) + 1 : (count / 3);
 }
 
+@Styles.Render("~/Content/form")
+
 <div class="login">
     <div class="wrap">
         @Html.Partial("Sidebar")
@@ -16,17 +18,17 @@
 
             @for (int i = 0; i < noOfRows; i++)
             {
-            <div class="box1">
-                @for (int j = 0; j <= 2; j++)
-                {
-                    if (counter <= (Model.Products.Count - 1))
+                <div class="box1">
+                    @for (int j = 0; j <= 2; j++)
                     {
-                        @Html.Partial("_DashboardItem", Model.Products[counter])
+                        if (counter <= (Model.Products.Count - 1))
+                        {
+                            @Html.Partial("_DashboardItem", Model.Products[counter])
+                        }
+                        counter++;
                     }
-                    counter++;
-                }
-                <div class="clear"></div>
-            </div>
+                    <div class="clear"></div>
+                </div>
             }
 
         </div>
@@ -35,17 +37,6 @@
 </div>
 
 
-<link href="~/Content/css/form.css" rel="stylesheet" type="text/css" media="all" />
-<script src="~/Content/js/jquery.easydropdown.js"></script>
-
-
-<script type="text/javascript" src="~/Content/js/jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" id="sourcecode">
-    $(function () {
-        $('.scroll-pane').jScrollPane();
-
-        $('#page-select').change(function () {
-            window.location.href = "/Home/Shop?page=1&pagesize=" + $(this).val();
-        });
-    });
-</script>
+@Scripts.Render("~/bundles/easydropdown")
+@Scripts.Render("~/bundles/jscrollpane")
+@Scripts.Render("~/bundles/shop")
