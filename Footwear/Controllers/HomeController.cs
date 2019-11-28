@@ -26,7 +26,7 @@ namespace Footwear.Controllers
             return View(model);
         }
 
-        public ActionResult Shop(int? page,int? pagesize)
+        public ActionResult Shop(int? page,int? pagesize,string category,string Type)
         {
             if (page == null) page = 1;
             ViewData["pageNum"] = page.Value;
@@ -34,9 +34,15 @@ namespace Footwear.Controllers
             if (pagesize == null) pagesize = 9;
             ViewData["pageSize"] = pagesize.Value;
 
-            ViewData["totalItems"] = _shopService.GetAll().Products.Count;
+            if (string.IsNullOrEmpty(category)) category = "Men";
+            ViewData["category"] = category;
 
-            var model = _shopService.GetPage(page.Value, pagesize.Value); 
+            if (string.IsNullOrEmpty(Type)) Type = "NewArrival";
+            ViewData["Type"] = Type;
+
+            ViewData["totalItems"] = _shopService.GetAll().Products.Where(x=>x.Category == category).ToList().Count;
+
+            var model = _shopService.GetPage(page.Value, pagesize.Value, category, Type); 
             return View(model);
         }
 

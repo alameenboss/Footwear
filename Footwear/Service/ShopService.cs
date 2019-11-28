@@ -14,10 +14,10 @@ namespace Footwear.Service
         {
             _productRepository = new ProductRepository();
         }
-        public ShopViewModel GetPage(int page,int pagesize)
+        public ShopViewModel GetPage(int page,int pagesize,string category,string Type)
         {
             var model = new ShopViewModel();
-            model.Products = _productRepository.GetPage(page, pagesize);
+            model.Products = _productRepository.GetPage(page, pagesize, category, Type);
             return model;
         }
 

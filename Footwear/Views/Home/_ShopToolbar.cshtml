@@ -6,6 +6,10 @@
     var noOfPage = count % pagesize != 0 ? Math.Abs(count / pagesize)  : (count / pagesize);
 
     var pageNum = ViewData["pageNum"] != null ? (int)ViewData["pageNum"] : 1;
+
+    var category = ViewData["category"] != null ? ViewData["category"].ToString() : "";
+
+    var type = ViewData["type"] != null ? ViewData["type"].ToString() : "";
 }
 <div class="mens-toolbar">
     <div class="sort">
@@ -44,7 +48,7 @@
             <li><a href="#" class="previous">Pages</a></li>
             @for (int i = 1; i <= noOfPage; i++)
             {
-                <li><a href="/Home/Shop?page=@i&pagesize=@pagesize">@i</a></li>
+                <li><a href="/Home/Shop?page=@i&pagesize=@pagesize&category=@category&Type=@type">@i</a></li>
             }
 
         </ul>

@@ -19,5 +19,19 @@ namespace Footwear.Models
         public string Descrption { get; set; }
         public string LinkDescription { get; set; }
         public string Category { get; set; }
+        public ItemType Type { get; internal set; }
+    }
+
+    public enum ItemType
+    {
+        NewArrivals,
+        Accessories,
+        Kids,
+        Bags,
+        Shoes,
+        Slipper,
+        Loffers,
+        Belts,
+
     }
 }

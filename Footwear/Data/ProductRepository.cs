@@ -60,7 +60,8 @@ namespace Footwear.Data
                         ProductHeading = "sed diam nonummy",
                         Descrption = "Lorem ipsum dolor sit amet, consectetuer",
                         LinkDescription = "adipiscing elit, sed diam",
-                        Category = "Women"
+                        Category = "Women",
+                        Type = (ItemType) RandomNumber.GenerateLockedRandom(1, 5)
                     });
                     Counter++;
                 }
@@ -71,9 +72,9 @@ namespace Footwear.Data
         }
 
 
-        public List<ProductViewModel> GetPage(int page, int pagesize)
+        public List<ProductViewModel> GetPage(int page, int pagesize,string category,string type)
         {
-            return GetAll().Skip(page * pagesize).Take(pagesize).ToList();
+            return GetAll().Where(x=>x.Category == category).Skip(page * pagesize).Take(pagesize).ToList();
         }
 
         public ProductViewModel GetById(int Id)

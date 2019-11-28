@@ -131,6 +131,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HelperUtility.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\SocailViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\ShopViewModel.cs" />
@@ -557,6 +558,7 @@
     <Content Include="Content\images\star.psd" />
     <Content Include="Content\images\s_arrow.psd" />
     <Content Include="Content\images\tw.psd" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
