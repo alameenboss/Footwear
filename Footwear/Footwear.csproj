@@ -123,6 +123,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Data\MenuRepository.cs" />
     <Compile Include="ICacheProvider.cs" />
     <Compile Include="Data\ProductRepository.cs" />
     <Compile Include="Data\DashboardRepository.cs" />
@@ -138,6 +140,7 @@
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\SliderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\MenuService.cs" />
     <Compile Include="Service\SingleService.cs" />
     <Compile Include="Service\ShopService.cs" />
     <Compile Include="Service\DashboardService.cs" />
@@ -611,6 +614,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\Interface\" />
+    <Folder Include="Views\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
