@@ -30,27 +30,27 @@ namespace Footwear.Data
                             Name = "Popular",
                             MenuItem = new List<Menu>()
                             {
-                                new Menu("New arrivals", @"/Home/Shop?category=Women&Type=NewArrivals"),
-                                new Menu("Stylish", @"/Home/Shop?category=Women&Type=Stylish"),
-                                new Menu("Fashion", @"/Home/Shop?category=Women&Type=Fashion"),
-                                new Menu("Branded", @"/Home/Shop?category=Women&Type=Branded"),
-                                new Menu("Accessories", @"/Home/Shop?category=Women&Type=Accessories"),
-                                new Menu("Bags", @"/Home/Shop?category=Women&Type=Bags"),
-                                new Menu("Wallet", @"/Home/Shop?category=Women&Type=Wallet")
+                                new Menu("New arrivals", @"/Home/Shop?category=Men&Type=NewArrivals"),
+                                new Menu("Stylish", @"/Home/Shop?category=Men&Type=Stylish"),
+                                new Menu("Fashion", @"/Home/Shop?category=Men&Type=Fashion"),
+                                new Menu("Branded", @"/Home/Shop?category=Men&Type=Branded"),
+                                new Menu("Accessories", @"/Home/Shop?category=Men&Type=Accessories"),
+                                new Menu("Bags", @"/Home/Shop?category=Men&Type=Bags"),
+                                new Menu("Wallet", @"/Home/Shop?category=Men&Type=Wallet")
                             }
                         },
                         new Menu
                         {
-                            Name = "Women Shoe",
+                            Name = "Men Shoe",
                             MenuItem = new List<Menu>()
                             {
-                                new Menu("New arrivals", @"/Home/Shop?category=Women&Type=Shoes"),
-                                new Menu("Stylish", @"/Home/Shop?category=Women&Type=Slipper"),
-                                new Menu("Fashion", @"/Home/Shop?category=Women&Type=Loffers"),
-                                new Menu("Branded", @"/Home/Shop?category=Women&Type=Accessories"),
-                                new Menu("Accessories", @"/Home/Shop?category=Women&Type=Belts"),
-                                new Menu("Bags", @"/Home/Shop?category=Women&Type=Bags"),
-                                new Menu("Wallet", @"/Home/Shop?category=Women&Type=Wallet")
+                                new Menu("New arrivals", @"/Home/Shop?category=Men&Type=Shoes"),
+                                new Menu("Stylish", @"/Home/Shop?category=Men&Type=Slipper"),
+                                new Menu("Fashion", @"/Home/Shop?category=Men&Type=Loffers"),
+                                new Menu("Branded", @"/Home/Shop?category=Men&Type=Accessories"),
+                                new Menu("Accessories", @"/Home/Shop?category=Men&Type=Belts"),
+                                new Menu("Bags", @"/Home/Shop?category=Men&Type=Bags"),
+                                new Menu("Wallet", @"/Home/Shop?category=Men&Type=Wallet")
                             }
                         },
                     }
