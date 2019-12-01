@@ -1,4 +1,10 @@
-﻿<div class="login">
+﻿@using IdentityManagement.Entities
+@model LoginInfo
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="login">
     <div class="wrap">
         <div class="col_1_of_login span_1_of_login">
             <h4 class="title">New Customers</h4>
@@ -13,16 +19,23 @@
             <div class="login-title">
                 <h4 class="title">Registered Customers</h4>
                 <div class="comments-area">
-                    <form action="/Account/Login" method="post">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <hr />
                         <p>
                             <label>Name</label>
                             <span>*</span>
-                            <input type="text" value="" name="Username">
+                            @Html.TextBoxFor(m => m.UserName)
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+
                         </p>
                         <p>
                             <label>Password</label>
                             <span>*</span>
-                            <input type="password" value="" name="Password">
+                            @Html.PasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </p>
                         <p id="login-form-remember">
                             <label><a href="/Account/ForgetPassword">Forget Your Password ? </a></label>
@@ -30,7 +43,8 @@
                         <p>
                             <input type="submit" value="Login">
                         </p>
-                    </form>
+                    }
+
                 </div>
             </div>
         </div>

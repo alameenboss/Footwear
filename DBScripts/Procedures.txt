@@ -1,0 +1,173 @@
+CREATE PROCEDURE [dbo].[NewUser]
+	-- Add the parameters for the stored procedure here
+	@ID nvarchar(50),
+	@UserName nvarchar(50),
+	@Email nvarchar(50),
+	@Password nvarchar(50),
+	@Status int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	INSERT INTO Users(
+		ID,
+		UserName ,
+		Email ,
+		Password ,
+		Status 
+	)VALUES(
+		@ID,
+		@UserName ,
+		@Email ,
+		@Password ,
+		@Status 
+	)
+END
+GO
+
+CREATE PROCEDURE [dbo].[DeleteUser]
+	-- Add the parameters for the stored procedure here
+	@ID nvarchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	DELETE FROM Users
+	WHERE ID = @ID
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetUser]
+	-- Add the parameters for the stored procedure here
+	@ID nvarchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM Users
+	WHERE ID = @ID
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetUserByUsername]
+	-- Add the parameters for the stored procedure here
+	@Username nvarchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM Users
+	WHERE Username = @Username
+END
+GO
+
+
+CREATE PROCEDURE [dbo].[UpdateUser]
+	-- Add the parameters for the stored procedure here
+	@UserName nvarchar(50),
+	@Email nvarchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	UPDATE Users
+	SET Email = @Email
+	WHERE UserName = @UserName
+END
+GO
+
+CREATE PROCEDURE [dbo].[NewUserRole]
+	@UserID nvarchar(50),
+	@RoleName nvarchar(50)
+AS
+BEGIN
+	DECLARE @UserRoleID nvarchar(50)
+	DECLARE @RoleID nvarchar(50)
+	
+	SELECT @RoleID = Id
+	FROM Roles
+	WHERE Name = @RoleName
+	
+	IF @RoleID IS NULL
+		BEGIN
+			INSERT INTO Roles(
+				Id,
+				Name
+			)VALUES(
+				NEWID(),
+				@RoleName
+			)
+			
+			SELECT @RoleID = Id
+			FROM Roles
+			WHERE Name = @RoleName
+		END
+	
+	SELECT @UserRoleID = UserRoleID
+	FROM UserRoles
+	WHERE UserID = @UserID AND RoleID = @RoleID
+	
+	IF @UserRoleID IS NULL
+		BEGIN
+			INSERT INTO UserRoles(
+				UserRoleID,
+				UserID,
+				RoleID
+			)VALUES(
+				NEWID(),
+				@UserID,
+				@RoleID
+			)
+		END 
+
+END
+GO
+
+CREATE PROCEDURE [dbo].[RemoveUserRole]
+	@UserID nvarchar(50),
+	@RoleName nvarchar(50)
+AS
+BEGIN
+	DECLARE @RoleID nvarchar(50)
+	
+	SELECT @RoleID = Id
+	FROM Roles
+	WHERE Name = @RoleName
+	
+	IF @RoleID IS NULL
+		BEGIN
+			Delete FROM UserRoles
+			WHERE RoleID = @RoleID AND UserID = @UserID
+		END
+
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetUserRoles]
+	@UserID nvarchar(50)
+AS
+BEGIN
+	
+	SELECT R.Name As RoleName
+	FROM UserRoles UR
+	INNER JOIN Roles R
+	ON UR.RoleID = R.Id
+	WHERE UR.UserID = @UserID
+	
+END
+GO

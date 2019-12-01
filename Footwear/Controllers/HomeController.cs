@@ -26,6 +26,7 @@ namespace Footwear.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Member")]
         public ActionResult Shop(int? page,int? pagesize,string category,string Type)
         {
             if (page == null) page = 1;
@@ -45,7 +46,7 @@ namespace Footwear.Controllers
             var model = _shopService.GetPage(page.Value, pagesize.Value, category, Type); 
             return View(model);
         }
-
+        [Authorize(Roles = "Member")]
         public ActionResult Single(int id)
         {
             ViewBag.Message = "Your contact page.";
